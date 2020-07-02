@@ -1,6 +1,6 @@
 # Drafty: Rich Message Format
 
-Drafty is a text format used by Tinode to style messages. The intent of Drafty is to be expressive just enough without opening too many possibilities for security issues. Drafty is influenced by FB's [draft.js](https://draftjs.org/) specification. As of the time of this writing [Javascript](/tinode/example-react-js/blob/master/drafty.js) and [Java](/tinode/android-example/blob/master/tinodesdk/src/main/java/co/tinode/tinodesdk/model/Drafty.java) implementations exist.
+Drafty is a text format used by Tinode to style messages. The intent of Drafty is to be expressive just enough without opening too many possibilities for security issues. One may think of it as JSON-encapsulated [markdown](https://en.wikipedia.org/wiki/Markdown). Drafty is influenced by FB's [draft.js](https://draftjs.org/) specification. As of the time of this writing [Javascript](https://github.com/tinode/tinode-js/blob/master/src/drafty.js), [Java](https://github.com/tinode/tindroid/blob/master/tinodesdk/src/main/java/co/tinode/tinodesdk/model/Drafty.java) and [Swift](https://github.com/tinode/ios/blob/master/TinodeSDK/model/Drafty.swift) implementations exist. A [Go implementation](https://github.com/tinode/chat/blob/master/server/drafty/drafty.go) can convert Drafy to plain text.
 
 ## Example
 
@@ -49,6 +49,8 @@ If `tp` is provided, it means the style is a basic text decoration:
  * `DL`: deleted or strikethrough text: ~~strikethrough~~.
  * `CO`: code or monotyped text, possibly with different background: `monotype`.
  * `BR`: line break.
+ * `RW`: logical grouping of formats, a row.
+ * `HD`: hidden text.
 
 If key is provided, it's a 0-based index into the `ent` field which contains an entity definition such as an image or an URL:
  * `LN`: link (URL) [https://api.tinode.co](https://api.tinode.co)
